@@ -568,7 +568,7 @@ with overview_tab:
                     ay=-45,
                 )
 
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
 
     with right:
         if "cpc_group" in filtered.columns:
@@ -609,7 +609,7 @@ with overview_tab:
                     margin=dict(l=10, r=10, t=55, b=10),
                     legend_title_text="G06N group",
                 )
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
 
     st.divider()
 
@@ -648,7 +648,7 @@ with overview_tab:
                     height=max(420, 32 * len(assignee_counts)),
                     margin=dict(l=10, r=10, t=55, b=10),
                 )
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
 
     with c2:
         if "assignee_country" in filtered.columns:
@@ -683,7 +683,7 @@ with overview_tab:
                     height=max(420, 32 * len(country_counts)),
                     margin=dict(l=10, r=10, t=55, b=10),
                 )
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
 
     # Dynamic executive insights
     st.subheader("Key signals from the current filter")
@@ -841,7 +841,7 @@ with competition_tab:
                     x=0,
                 ),
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
 
             left, right = st.columns([1.2, 1])
 
@@ -873,7 +873,7 @@ with competition_tab:
                 st.markdown("#### Assignee benchmark table")
                 st.dataframe(
                     ranking,
-                    use_container_width=True,
+                    width="stretch",
                     hide_index=True,
                 )
 
@@ -933,7 +933,7 @@ with competition_tab:
                             height=350,
                             margin=dict(l=10, r=10, t=50, b=10),
                         )
-                        st.plotly_chart(fig, use_container_width=True)
+                        st.plotly_chart(fig, width="stretch")
 
         # Company × technology heatmap
         if (
@@ -983,7 +983,7 @@ with competition_tab:
                     height=max(450, 38 * len(pivot)),
                     margin=dict(l=10, r=10, t=60, b=10),
                 )
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
 
 
 # ============================================================
@@ -1053,7 +1053,7 @@ with technology_tab:
                     x=0,
                 ),
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
 
             left, right = st.columns(2)
 
@@ -1085,7 +1085,7 @@ with technology_tab:
                     height=430,
                     margin=dict(l=10, r=10, t=55, b=10),
                 )
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
 
             with right:
                 # Median grant time by technology
@@ -1122,7 +1122,7 @@ with technology_tab:
                         height=430,
                         margin=dict(l=10, r=10, t=55, b=10),
                     )
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
 
             # Country × technology heatmap
             if "assignee_country" in tech_df.columns:
@@ -1171,7 +1171,7 @@ with technology_tab:
                         height=500,
                         margin=dict(l=10, r=10, t=60, b=10),
                     )
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
 
             # Technology benchmark table
             agg_map = {
@@ -1211,7 +1211,7 @@ with technology_tab:
             st.markdown("#### Technology benchmark table")
             st.dataframe(
                 benchmark,
-                use_container_width=True,
+                width="stretch",
                 hide_index=True,
             )
 
@@ -1297,7 +1297,7 @@ with characteristics_tab:
                     margin=dict(l=10, r=10, t=55, b=10),
                     showlegend=False,
                 )
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
 
         with right:
             st.markdown("#### Distribution summary")
@@ -1313,7 +1313,7 @@ with characteristics_tab:
             )
             st.dataframe(
                 summary,
-                use_container_width=True,
+                width="stretch",
             )
 
         st.divider()
@@ -1344,7 +1344,7 @@ with characteristics_tab:
                 height=620,
                 margin=dict(l=10, r=10, t=60, b=10),
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
 
         # Scatter relationship
         scatter_candidates = [
@@ -1436,7 +1436,7 @@ with characteristics_tab:
                     height=520,
                     margin=dict(l=10, r=10, t=55, b=10),
                 )
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
 
 
 # ============================================================
@@ -1479,7 +1479,7 @@ with explorer_tab:
 
     st.dataframe(
         explorer,
-        use_container_width=True,
+        width="stretch",
         hide_index=True,
         height=620,
     )

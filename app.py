@@ -1318,12 +1318,12 @@ with characteristics_tab:
 
         st.divider()
 
-        # Spearman correlation
+        # Pearson correlation, matching Part A Figure 4.5 and its methodology
         if len(numeric_cols) >= 2:
             corr = (
                 filtered[numeric_cols]
                 .apply(pd.to_numeric, errors="coerce")
-                .corr(method="spearman")
+                .corr(method="pearson")
             )
 
             fig = px.imshow(
@@ -1333,7 +1333,7 @@ with characteristics_tab:
                 color_continuous_scale="RdBu_r",
                 zmin=-1,
                 zmax=1,
-                title="Spearman correlation between patent characteristics",
+                title="Pearson correlation between patent characteristics",
                 labels=dict(
                     color="Correlation",
                     x="",
@@ -1503,6 +1503,11 @@ with st.expander("ℹ️ Scope, definitions and interpretation notes"):
     st.markdown(
         f"""
         **Source:** Google Patents Public Data accessed through BigQuery.
+
+        **Deployment data:** The app uses an 18-column deployment extract of
+        the 23-column cleaned analytical dataset. It preserves all 80,566
+        publication records and all values used by the dashboard; five
+        research-only columns are omitted from the public deployment.
 
         **Patent scope:** US-granted utility patents (`B1` / `B2`) containing
         at least one CPC classification within `G06N`.

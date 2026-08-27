@@ -9,7 +9,11 @@ python -m pip install -r requirements.txt
 streamlit run app.py
 ```
 
-The app reads the included cleaned analytical dataset from `02_clean_patents.parquet`.
+The app reads `02_clean_patents.parquet`, an 18-column deployment extract of
+the 23-column cleaned analytical dataset used in the report. The extract keeps
+all 80,566 publication records and preserves every shared value exactly; only
+five research-only fields that the dashboard does not use were omitted to keep
+the public deployment lightweight.
 
 ## Deploy on Streamlit Community Cloud
 
@@ -24,4 +28,4 @@ This repository intentionally contains only the files required to run the dashbo
 
 ## Data note
 
-The dashboard uses a cleaned analytical extract derived from public US patent records. It is intended for coursework demonstration and descriptive analysis. The 2026 period is partial, so year-over-year growth calculations use completed years through 2025.
+The dashboard uses a cleaned analytical extract derived from public US patent records. It is intended for coursework demonstration and descriptive analysis. The 2026 period is partial, so year-over-year growth calculations use completed years through 2025. The patent-characteristics heatmap uses Pearson correlation, matching Part A Figure 4.5.

@@ -2,12 +2,28 @@
 
 An interactive Streamlit dashboard supporting the descriptive-analysis component of a University of Trier Business Analytics project. It explores 80,566 cleaned US AI patent records and provides filters, KPIs, temporal trends, assignee rankings, technology analysis, grant-time analysis, and a filtered-data download.
 
+## Live demo
+
+[Open the AI Patent Intelligence Dashboard](https://ai-patent-intelligence-dashboard.streamlit.app/)
+
+The hosted app may take a few seconds to wake up after a period of inactivity.
+
 ## Run locally
 
 ```bash
+git clone https://github.com/JanakDobariya/ai-patent-intelligence-dashboard.git
+cd ai-patent-intelligence-dashboard
+python3 -m venv .venv
+source .venv/bin/activate
 python -m pip install -r requirements.txt
 streamlit run app.py
 ```
+
+Open `http://localhost:8501` if Streamlit does not open the browser automatically. On Windows, activate the environment with `.venv\Scripts\activate`.
+
+## Offline use
+
+After the Python packages have been installed, the dashboard can run without an internet connection. The cleaned patent dataset is included in the repository, and the app does not require an API key or external service. GitHub links and the hosted live demo still require internet access.
 
 The app reads `02_clean_patents.parquet`, an 18-column deployment extract of
 the 23-column cleaned analytical dataset used in the report. The extract keeps

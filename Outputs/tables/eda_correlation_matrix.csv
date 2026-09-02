@@ -1,0 +1,9 @@
+,inventor_count,assignee_count,cpc_count,backward_citation_count,title_word_count,abstract_word_count,claims_word_count,filing_to_grant_days
+inventor_count,1.0,0.06,0.05,0.03,-0.02,0.0,0.03,-0.01
+assignee_count,0.06,1.0,0.01,-0.02,0.01,-0.02,-0.01,0.01
+cpc_count,0.05,0.01,1.0,0.29,0.03,-0.02,-0.0,-0.04
+backward_citation_count,0.03,-0.02,0.29,1.0,0.02,-0.03,0.01,-0.01
+title_word_count,-0.02,0.01,0.03,0.02,1.0,0.08,0.05,-0.01
+abstract_word_count,0.0,-0.02,-0.02,-0.03,0.08,1.0,0.11,-0.01
+claims_word_count,0.03,-0.01,-0.0,0.01,0.05,0.11,1.0,0.01
+filing_to_grant_days,-0.01,0.01,-0.04,-0.01,-0.01,-0.01,0.01,1.0

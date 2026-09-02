@@ -1,6 +1,6 @@
-# US AI Patent Intelligence Dashboard
+# US AI Patent Intelligence Dashboard and Analysis
 
-An interactive Streamlit dashboard supporting the descriptive-analysis component of a University of Trier Business Analytics project. It explores 80,566 cleaned US AI patent records and provides filters, KPIs, temporal trends, assignee rankings, technology analysis, grant-time analysis, and a filtered-data download.
+This repository contains the Streamlit dashboard and the original analysis files used for Parts A and B of a University of Trier Business Analytics project. The work examines 80,566 cleaned US AI patent records through descriptive analysis and predictive modelling.
 
 ## Live demo
 
@@ -31,6 +31,24 @@ all 80,566 publication records and preserves every shared value exactly; only
 five research-only fields that the dashboard does not use were omitted to keep
 the public deployment lightweight.
 
+## Project files
+
+- `src/` contains the four Part A notebooks for the raw-data audit, cleaning, exploratory analysis, and visualisations.
+- `Part_B/` contains the six Part B notebooks for target creation, preprocessing, model training, evaluation, tuning, and final interpretation.
+- `Data/processed/02_clean_patents.parquet` is the complete 23-column cleaned analytical dataset.
+- `Data/processed/01_part_b_target_dataset.parquet` is the modelling dataset created for Part B.
+- `Data/raw/forward_citations_24m.csv` contains the forward-citation data used to construct the Part B target.
+- `Data/raw/Synthetic_Data_Corruption.ipynb` records the synthetic data-quality preparation carried out before the raw-data audit.
+- `Outputs/figures/` and `Outputs/tables/` contain the figures and tables produced by the original notebooks.
+
+The root-level `02_clean_patents.parquet` is a smaller 18-column copy used only by the deployed dashboard. The full analytical file is retained under `Data/processed/`.
+
+## Running the notebooks
+
+The notebooks use Python with pandas, NumPy, PyArrow, Matplotlib, and scikit-learn. JupyterLab or Jupyter Notebook can be used to open them. Run the Part A notebooks in numerical order from `src/`, followed by the Part B notebooks in numerical order from `Part_B/`.
+
+The raw annual patent downloads and `Combined_data.parquet` are not stored here because individual files exceed GitHub's normal 100 MB file limit. The duplicate CSV version of the cleaned dataset is also omitted because the equivalent Parquet file is included. As a result, the included processed data supports the exploratory analysis, visualisation, target-construction, and modelling stages, while the earliest raw ingestion and cleaning stages require the original local source files.
+
 ## Deploy on Streamlit Community Cloud
 
 1. Create an app from this GitHub repository.
@@ -40,7 +58,7 @@ the public deployment lightweight.
 
 ## Scope
 
-This repository intentionally contains only the files required to run the dashboard. Raw data, notebooks, predictive modelling work, academic reports, and unrelated project artefacts are excluded.
+The repository contains the dashboard, original coursework notebooks, the smaller data files needed for the main analytical stages, and their direct outputs. Final reports, report-generation files, review notes, temporary files, and later audit or correction artefacts are intentionally excluded.
 
 ## Data note
 
